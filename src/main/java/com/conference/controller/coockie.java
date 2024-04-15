@@ -11,20 +11,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 public class coockie {
-    @GetMapping("/set-cookie")
-    public String setCookie(HttpServletResponse response, HttpServletRequest request) {
-        System.out.println("sdfgfs");
-        // Create a cookie
-        Cookie cookie = new Cookie("user", "JohnDoe");
-
-        // Add cookie to the response
-        response.addCookie(cookie);
-
-        return "Cookie has been set!";
+    @GetMapping("/test")
+    public String setCookie() {
+        return "test";
     }
 
-    @GetMapping("/get-cookie")
-    public String getCookie(@CookieValue(value = "user", defaultValue = "Guest") String username) {
-        return "Username: " + username;
-    }
 }
